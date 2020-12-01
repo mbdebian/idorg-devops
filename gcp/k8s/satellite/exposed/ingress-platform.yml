@@ -1,0 +1,39 @@
+# Identifiers.org satellite platform ingress controller
+# Author: Manuel Bernal Llinares <mbdebian@gmail.com>
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: satellite-deployment
+    namespace: idorg-satellite
+    labels:
+        environment: production
+        tier: gateway
+        app: glb-satellite
+    annotations:
+        kubernetes.io/ingress.class: "gce"
+        kubernetes.io/ingress.global-static-ip-name: idorg-satellite
+        ingress.gcp.kubernetes.io/pre-shared-cert: 'cert-idorg-sat-prod-resolver,cert-idorg-sat-prod-metadata,cert-idorg-sat-prod-web'
+        kubernetes.io/ingress.allow-http: "true"
+spec:
+    rules:
+    # Resolver rules
+    - host: resolver.api.identifiers.org
+      http:
+          paths:
+              - backend:
+                  serviceName: nodeport-resolver
+                  servicePort: 8080
+    # Metadata Service rules
+    - host: metadata.api.identifiers.org
+      http:
+          paths:
+              - backend:
+                  serviceName: nodeport-metadata
+                  servicePort: 8082
+    # Web Frontend rules
+    - host: identifiers.org
+      http:
+          paths:
+              - backend:
+                  serviceName: nodeport-web-satellite
+                  servicePort: 80
