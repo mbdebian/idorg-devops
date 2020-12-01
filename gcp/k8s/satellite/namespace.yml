@@ -1,0 +1,8 @@
+# Definition of Satellite Namespace for Identifiers.org
+# Author: Manuel Bernal Llinares <mbdebian@gmail.com>
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: idorg-satellite
+  labels:
+    name: idorgns-satellite
