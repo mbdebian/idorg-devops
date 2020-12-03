@@ -3,7 +3,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-    name: satellite-deployment
+    name: gateway-satellite
     namespace: idorg-satellite
     labels:
         environment: production
