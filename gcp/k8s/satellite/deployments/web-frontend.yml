@@ -52,7 +52,7 @@ spec:
                   - name: SATELLITE_WEB_SPA_CONFIG_WS_RESOLVER_SCHEMA
                     value: "http"
                   - name: SATELLITE_WEB_SPA_CONFIG_WS_RESOLVER_URL
-                    value: "https://resolver.api.identifiers.org"
+                    value: "https://resolver.api.labs.identifiers.org"
                   - name: SATELLITE_WEB_SPA_CONFIG_WS_HQ_REGISTRY_URL
                     value: "https://registry.api.identifiers.org"
                   - name: SATELLITE_WEB_SPA_CONFIG_WS_API_VERSION
@@ -64,7 +64,7 @@ spec:
                   - name: SATELLITE_WEB_SPA_CONFIG_FLAG_SHOW_SEARCH_SUGGESTIONS
                     value: "true"
                   - name: SATELLITE_WEB_SPA_CONFIG_CORS_ORIGIN
-                    value: "http://identifiers.org,https://identifiers.org,http://cloud.identifiers.org,https://cloud.identifiers.org"
+                    value: "http://labs.identifiers.org,https://labs.identifiers.org"
                   - name: WEB_SATELLITE_WS_JVM_MEMORY_MAX
                     value: "420m"
                   ports:
