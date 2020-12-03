@@ -17,21 +17,21 @@ metadata:
 spec:
     rules:
     # Resolver rules
-    - host: resolver.api.identifiers.org
+    - host: resolver.api.labs.identifiers.org
       http:
           paths:
               - backend:
                   serviceName: nodeport-resolver
                   servicePort: 8080
     # Metadata Service rules
-    - host: metadata.api.identifiers.org
+    - host: metadata.api.labs.identifiers.org
       http:
           paths:
               - backend:
                   serviceName: nodeport-metadata
                   servicePort: 8082
     # Web Frontend rules
-    - host: identifiers.org
+    - host: labs.identifiers.org
       http:
           paths:
               - backend:
