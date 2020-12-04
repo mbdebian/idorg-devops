@@ -1,6 +1,6 @@
 # Identifiers.org satellite platform ingress controller
 # Author: Manuel Bernal Llinares <mbdebian@gmail.com>
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
     name: gateway-satellite
@@ -11,7 +11,7 @@ metadata:
         app: glb-satellite
     annotations:
         kubernetes.io/ingress.class: "gce"
-        kubernetes.io/ingress.global-static-ip-name: idorg-satellite
+        kubernetes.io/ingress.global-static-ip-name: idorg-labs-satellite
         #ingress.gcp.kubernetes.io/pre-shared-cert: 'cert-idorg-sat-prod-resolver,cert-idorg-sat-prod-metadata,cert-idorg-sat-prod-web'
         #kubernetes.io/ingress.allow-http: "true"
 spec:
